@@ -13,6 +13,7 @@ RDEPENDS_${PN} = " \
     resin-extra-udev-rules \
     rsync \
     kernel-modules \
+    os-config \
     os-release \
     less \
     "
