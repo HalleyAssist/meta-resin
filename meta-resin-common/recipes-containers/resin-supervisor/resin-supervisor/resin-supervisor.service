@@ -5,14 +5,12 @@ Requires=\
     resin\x2ddata.mount \
     resin-device-uuid.service \
     resin-device-api-key.service \
-    bind-etc-systemd-system-resin.target.wants.service \
     bind-etc-resin-supervisor.service
 After=\
     balena.service \
     resin\x2ddata.mount \
     resin-device-uuid.service \
     resin-device-api-key.service \
-    bind-etc-systemd-system-resin.target.wants.service \
     bind-etc-resin-supervisor.service
 
 [Service]
@@ -27,4 +25,4 @@ ExecStart=/usr/bin/healthdog --healthcheck=/usr/lib/resin-supervisor/resin-super
 ExecStop=-@BINDIR@/balena stop resin_supervisor
 
 [Install]
-WantedBy=resin.target
+WantedBy=multi-user.target
